@@ -1,0 +1,22 @@
+설치 방법
+
+1. ZIP 압축을 풉니다.
+2. 기존 수신기가 수동 실행 중이면 Ctrl+C로 종료합니다.
+3. 해당 폴더에서 터미널을 열고 일반 사용자로 실행합니다.
+   새 설치: bash install.sh
+   기존 설치 업데이트: bash update.sh
+   sudo를 앞에 붙이지 마세요. 필요한 단계에서 관리자 비밀번호를 요청합니다.
+4. 완료 후 sudo reboot를 실행합니다.
+5. Mission Planner에서 Target SYS=1 / COMP=191로 설정하고 PTT로 송신합니다.
+
+신규 설치는 인터넷 연결이 필요합니다. 업데이트는 기존 의존성을 사용합니다.
+자동 설정: UART 켜기, 시리얼 콘솔 끄기, dialout 권한, 자동 로그인, 부팅 자동 실행.
+모든 활성 Bluetooth/AUX/USB/HDMI 출력에 직접 음성을 보냅니다.
+출력 연결마다 OS 볼륨 100% / 음소거 해제를 적용하며 물리 볼륨은 별도입니다.
+
+진단: bash diagnose.sh
+서비스 상태: systemctl --user status dronevoice.service --no-pager
+소리 테스트: ~/.local/share/dronevoice/.venv/bin/python ~/.local/share/dronevoice/control.py --test-audio
+제거: bash uninstall.sh (OS UART/로그인/볼륨 설정은 유지)
+
+자세한 변경 내용과 제한은 최종본_안내.txt를 참고하세요.

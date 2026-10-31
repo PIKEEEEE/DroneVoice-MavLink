@@ -1,0 +1,13 @@
+build/
+**/bin/
+**/obj/
+**/__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.log
+*.pdb
+*.user
+*.suo
+.vs/

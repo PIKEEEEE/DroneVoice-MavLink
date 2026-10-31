@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <MissionPlannerDir Condition="'$(MissionPlannerDir)' == ''">$(MSBuildProgramFiles32)\Mission Planner</MissionPlannerDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MissionPlanner"><HintPath>$(MissionPlannerDir)\MissionPlanner.exe</HintPath><Private>false</Private></Reference>
+    <Reference Include="MAVLink"><HintPath>$(MissionPlannerDir)\MAVLink.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MissionPlanner.ArduPilot"><HintPath>$(MissionPlannerDir)\MissionPlanner.ArduPilot.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MissionPlanner.Utilities"><HintPath>$(MissionPlannerDir)\MissionPlanner.Utilities.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Interfaces"><HintPath>$(MissionPlannerDir)\Interfaces.dll</HintPath><Private>false</Private></Reference>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="Concentus" Version="1.1.7" />
+  </ItemGroup>
+</Project>
